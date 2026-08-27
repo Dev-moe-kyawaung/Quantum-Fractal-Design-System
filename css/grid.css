@@ -1,0 +1,121 @@
+/* ==========================================================================
+   QUANTUM-FRACTAL RESPONSIVE GRID SYSTEM
+   ========================================================================== */
+
+.qf-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--qf-grid-columns), 1fr);
+  gap: var(--qf-grid-gap);
+  width: 100%;
+  max-width: var(--qf-container-max);
+  margin: 0 auto;
+  padding: 0 var(--qf-container-padding);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .qf-grid {
+    gap: var(--qf-grid-gap-sm);
+    padding: 0 var(--qf-container-padding);
+  }
+}
+
+@media (min-width: 1280px) {
+  .qf-grid {
+    gap: var(--qf-grid-gap-lg);
+    padding: 0 var(--qf-container-padding-lg);
+  }
+}
+
+/* Grid Column Spans */
+.qf-col { grid-column: span 1; }
+.qf-col-2 { grid-column: span 2; }
+.qf-col-3 { grid-column: span 3; }
+.qf-col-4 { grid-column: span 4; }
+.qf-col-5 { grid-column: span 5; }
+.qf-col-6 { grid-column: span 6; }
+.qf-col-7 { grid-column: span 7; }
+.qf-col-8 { grid-column: span 8; }
+.qf-col-9 { grid-column: span 9; }
+.qf-col-10 { grid-column: span 10; }
+.qf-col-11 { grid-column: span 11; }
+.qf-col-12 { grid-column: span 12; }
+
+/* Responsive Column Overrides */
+@media (max-width: 480px) {
+  .qf-col-xs-12 { grid-column: span 12; }
+  .qf-col-xs-6  { grid-column: span 6; }
+  .qf-col-xs-4  { grid-column: span 4; }
+  .qf-col-xs-3  { grid-column: span 3; }
+  .qf-col-xs-2  { grid-column: span 2; }
+  .qf-col-xs-1  { grid-column: span 1; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .qf-col-sm-12 { grid-column: span 12; }
+  .qf-col-sm-6  { grid-column: span 6; }
+  .qf-col-sm-4  { grid-column: span 4; }
+  .qf-col-sm-3  { grid-column: span 3; }
+  .qf-col-sm-2  { grid-column: span 2; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .qf-col-md-12 { grid-column: span 12; }
+  .qf-col-md-8  { grid-column: span 8; }
+  .qf-col-md-6  { grid-column: span 6; }
+  .qf-col-md-4  { grid-column: span 4; }
+  .qf-col-md-3  { grid-column: span 3; }
+}
+
+@media (min-width: 1025px) {
+  .qf-col-lg-12 { grid-column: span 12; }
+  .qf-col-lg-8  { grid-column: span 8; }
+  .qf-col-lg-6  { grid-column: span 6; }
+  .qf-col-lg-4  { grid-column: span 4; }
+  .qf-col-lg-3  { grid-column: span 3; }
+  .qf-col-lg-2  { grid-column: span 2; }
+}
+
+/* Grid Alignment Utilities */
+.qf-grid--center { align-items: center; justify-items: center; }
+.qf-grid--start  { align-items: start; justify-items: start; }
+.qf-grid--end    { align-items: end; justify-items: end; }
+.qf-grid--stretch { align-items: stretch; justify-items: stretch; }
+
+/* Flex-based fallback for non-grid contexts */
+.qf-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qf-grid-gap);
+  margin: calc(var(--qf-grid-gap) * -1) 0 0 calc(var(--qf-grid-gap) * -1);
+}
+
+.qf-flex-grid > * {
+  flex: 1 0 calc(100% / var(--qf-grid-columns));
+  margin: var(--qf-grid-gap) 0 0 var(--qf-grid-gap);
+  box-sizing: border-box;
+}
+
+/* Fractal Grid Pattern - for background decorative grids */
+.qf-fractal-grid {
+  position: absolute;
+  inset: 0;
+  z-index: var(--qf-z-bg);
+  pointer-events: none;
+  background-image: 
+    linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+}
+
+.qf-fractal-grid--dense {
+  background-size: 30px 30px;
+  opacity: 0.5;
+}
+
+.qf-fractal-grid--gold {
+  background-image: 
+    linear-gradient(rgba(255, 215, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 215, 0, 0.02) 1px, transparent 1px);
+}

@@ -1,0 +1,56 @@
+/**
+ * =============================================================================
+ * EVENT EMITTER - Lightweight Event System
+ * =============================================================================
+ */
+
+export class EventEmitter {
+  constructor() {
+    this.events = new Map();
+  }
+  
+  on(event, listener) {
+    if (!this.events.has(event)) {
+      this.events.set(event, new Set());
+    }
+    this.events.get(event).add(listener);
+    return () => this.off(event, listener);
+  }
+  
+  off(event, listener) {
+    if (!this.events.has(event)) return;
+    this.events.get(event).delete(listener);
+  }
+  
+  emit(event, data) {
+    if (!this.events.has(event)) return;
+    this.events.get(event).forEach((listener) => {
+      try {
+        listener(data);
+      } catch (error) {
+        console.error(`Error in event listener for "${event}":`, error);
+      }
+    });
+  }
+  
+  once(event, listener) {
+    const wrapper = (data) => {
+      listener(data);
+      this.off(event, wrapper);
+    };
+    this.on(event, wrapper);
+    return () => this.off(event, wrapper);
+  }
+  
+  removeAllListeners(event) {
+    if (event) {
+      this.events.delete(event);
+    } else {
+      this.events.clear();
+    }
+  }
+  
+  listenerCount(event) {
+    return this.events.has(event) ? this.events.get(event).size : 0;
+  }
+}

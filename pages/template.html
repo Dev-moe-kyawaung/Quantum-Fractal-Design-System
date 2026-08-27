@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-qf-theme="quantum-fractal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quantum-Fractal Design System - Page Template">
+  
+  <!-- Page Identity -->
+  <meta name="qf:page-id" content="template">
+  <meta name="qf:page-type" content="generic">
+  
+  <!-- Design System CSS -->
+  <link rel="preload" href="/css/tokens.css" as="style">
+  <link rel="preload" href="/css/grid.css" as="style">
+  <link rel="preload" href="/css/navigation.css" as="style">
+  <link rel="preload" href="/css/fractal-effects.css" as="style">
+  
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/grid.css">
+  <link rel="stylesheet" href="/css/navigation.css">
+  <link rel="stylesheet" href="/css/fractal-effects.css">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollSmoother.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js" defer></script>
+  
+  <!-- Main JS -->
+  <script type="module" src="/js/main.js"></script>
+  
+  <title>Page Title | Quantum-Fractal</title>
+</head>
+<body data-page-id="template" data-page-type="generic">
+  <!-- Page Transition Overlay -->
+  <div class="qf-page-transition" aria-hidden="true">
+    <div class="qf-page-transition__layer"></div>
+    <div class="qf-page-transition__layer"></div>
+    <div class="qf-page-transition__layer"></div>
+  </div>
+  
+  <!-- Particle Canvas Container -->
+  <canvas id="qf-particles-canvas" aria-hidden="true"></canvas>
+  
+  <!-- Smooth Scroll Wrapper -->
+  <div id="qf-smooth-wrapper">
+    <div id="qf-smooth-content">
+      
+      <!-- Navigation -->
+      <nav class="qf-nav" role="navigation" aria-label="Main navigation">
+        <div class="qf-nav__inner">
+          <a href="/" class="qf-nav__brand" aria-label="Quantum-Fractal Home">
+            <div class="qf-nav__logo" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="qf-nav__logo-path" d="M20 4 L36 14 L36 26 L20 36 L4 26 L4 14 Z" stroke-dasharray="80" stroke-dashoffset="0"/>
+                <path class="qf-nav__logo-path" d="M20 10 L30 16 L30 24 L20 30 L10 24 L10 16 Z" stroke-dasharray="60" stroke-dashoffset="30"/>
+              </svg>
+            </div>
+            <span class="qf-nav__title">Quantum-Fractal</span>
+          </a>
+          
+          <button class="qf-nav__toggle" aria-expanded="false" aria-controls="qf-nav-menu" aria-label="Open menu">
+            <span class="qf-nav__toggle-line"></span>
+            <span class="qf-nav__toggle-line"></span>
+            <span class="qf-nav__toggle-line"></span>
+          </button>
+          
+          <ul class="qf-nav__menu" id="qf-nav-menu" role="menubar">
+            <li class="qf-nav__item" role="none">
+              <a href="/" class="qf-nav__link" role="menuitem" aria-current="page">Home</a>
+            </li>
+            <li class="qf-nav__item" role="none">
+              <a href="/about" class="qf-nav__link" role="menuitem">About</a>
+            </li>
+            <li class="qf-nav__item" role="none">
+              <a href="/projects" class="qf-nav__link" role="menuitem">Projects</a>
+            </li>
+            <li class="qf-nav__item" role="none">
+              <a href="/blog" class="qf-nav__link" role="menuitem">Blog</a>
+            </li>
+            <li class="qf-nav__item" role="none">
+              <a href="/contact" class="qf-nav__link qf-nav__cta" role="menuitem">Get Started
+          </ul>
+        </div>
+        <div class="qf-nav__progress" aria-hidden="true"></div>
+      </nav>
+      
+      <!-- Main Content -->
+      <main id="qf-page-content>template" data-qf-animate"qf-gridcard>
+            qf-qf-col-12f-grid2">
+        ="qf-<div class="qf-gridf-colqf-page__hero 12  qf-col-md-8qf-col-lg-6">
+                  <h1 data-qf-animate="text-reveal" data-qf-options='{"splitType": "chars", "stagger": 0.02}'>
+                    Quantum-Fractal Design System
+                  </h1>
+                  <p class="qf-page__lead" data-qf-animate="fade-up" data-qf-options='{"delay": 0.2}'>
+                    A comprehensive, performant design system for building 30-page portfolio websites with advanced GSAP animations, particle simulations, and fractal-inspired visual effects.
+                  </p>
+                  <div class="qf-page__actions" data-qf-animate="fade-up" data-qf-options='{"delay": 0.4}'>
+                    <a href="/docs" class="qf-btn qf-btn--primary qf-btn--lg">View Documentation</a>
+                    <a href="/examples" class="qf-btn qf-btn--secondary qf-btn--lg">See Examples</a>
+                  </div>
+                </div>
+                
+                <div class="qf-col-12 qf-col-md-8 qf-col-lg-6">
+                  <div class="qf-card qf-card--fractal-glow" data-qf-animate="scale-in" data-qf-options='{"delay": 0.3}'>
+                    <div class="qf-card__visual" id="fractal-demo"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Features Grid -->
+            <section class="qf-page__section" aria-labelledby="features-heading">
+              <div class="qf-grid">
+                <div class="qf-col-12" data-qf-animate="fade-up">
+                  <h2 id="features-heading" class="qf-section__title">Core Features</h2>
+                </div>
+                
+                <article class="qf-col-12 qf-col-md-6 qf-col-lg-4" data-qf-animate="fade-up" data-qf-options='{"delay": 0.1}'>
+                  <div class="qf-card qf-border-fractal qf-border-fractal--animated">
+                    <div class="qf-card__icon qf-glow-cyan">⚡</div>
+                    <h3 class="qf-card__title">GSAP Animations</h3>
+                    <p class="qf-card__text">Production-ready scroll-triggered animations with ScrollTrigger, ScrollSmoother, and SplitText integration.</p>
+                  </div>
+                </article>
+                
+                <article class="qf-col-12 qf-col-md-6 qf-col-lg-4" data-qf-animate="fade-up" data-qf-options='{"delay": 0.2}'>
+                  <div class="qf-card qf-border-fractal qf-border-fractal--animated">
+                    <div class="qf-card__icon qf-glow-violet">🎨</div>
+                    <h3 class="qf-card__title">Particle System</h3>
+                    <p class="qf-card__text">High-performance canvas particle simulation with automatic quality scaling for 60fps on all devices.</p>
+                  </div>
+                </article>
+                
+                <article class="qf-col-12 qf-col-md-6 qf-col-lg-4" data-qf-animate="fade-up" data-qf-options='{"delay": 0.3}'>
+                  <div class="qf-card qf-border-fractal qf-border-fractal--animated">
+                    <div class="qf-card__icon qf-glow-gold">📱</div>
+                    <h3 class="qf-card__title">Responsive Grid</h3>
+                    <p class="qf-card__text">12-column fluid grid with fractal spacing, golden ratio proportions, and container queries.</p>
+                  </div>
+                </article>
+                
+                <article class="qf-col-12 qf-col-md-6 qf-col-lg-4" data-qf-animate="fade-up" data-qf-options='{"delay": 0.1}'>
+                  <div class="qf-card qf-border-fractal qf-border-fractal--animated">
+                    <div class="qf-card__icon qf-glow-lime">🧭</div>
+                    <h3 class="qf-card__title">Unified Navigation</h3>
+                    <p class="qf-card__text">Responsive navigation with mobile menu, scroll progress, page transitions, and keyboard accessibility.</p>
+                  </div>
+                </article>
+                
+                <article class="qf-col-12 qf-col-md-6 qf-col-lg-4" data-qf-animate="fade-up" data-qf-options='{"delay": 0.2}'>
+                  <div class="qf-card qf-border-fractal qf-border-fractal--animated">
+                    <div class="qf-card__icon qf-glow-magenta">🔄</div>
+                    <h3 class="qf-card__title">Page Transitions</h3>
+                    <p class="qf-card__text">Seamless AJAX page transitions with animated overlays, content replacement, and history management.</p>
+                  </div>
+                </article>
+                
+                <article class="qf-col-12 qf-col-md-6 qf-col-lg-4" data-qf-animate="fade-up" data-qf-options='{"delay": 0.3}'>
+                  <div class="qf-card qf-border-fractal qf-border-fractal--animated">
+                    <div class="qf-card__icon qf-glow-blue">♿</div>
+                    <h3 class="qf-card__title">Accessibility First</h3>
+                    <p class="qf-card__text">Reduced motion support, semantic HTML, ARIA attributes, focus management, and WCAG 2.1 AA compliance.</p>
+                  </div>
+                </article>
+              </div>
+            </section>
+            
+          </main>
+        
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="qf-footer" role="contentinfo">
+      <div class="qf-grid">
+        <div class="qf-col-12 qf-col-lg-6">
+          <p class="qf-footer__copyright">© 2026 Quantum-Fractal Design System. Built with precision.</p>
+        </div>
+        <div class="qf-col-12 qf-col-lg-6">
+          <nav class="qf-footer__nav" aria-label="Footer navigation">
+            <a href="/privacy" class="qf-footer__link">Privacy</a>
+            <a href="/terms" class="qf-footer__link">Terms</a>
+            <a href="/license" class="qf-footer__link">License</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    
+  </body>
+</html> 

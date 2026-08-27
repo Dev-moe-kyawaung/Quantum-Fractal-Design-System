@@ -1,0 +1,319 @@
+/* ==========================================================================
+   QUANTUM-FRACTAL GLOW & PARTICLE EFFECTS
+   ========================================================================== */
+
+/* --- Fractal Glow Utilities --- */
+.qf-glow-cyan     { box-shadow: var(--qf-glow-cyan); }
+.qf-glow-magenta  { box-shadow: var(--qf-glow-magenta); }
+.qf-glow-gold     { box-shadow: var(--qf-glow-gold); }
+.qf-glow-lime     { box-shadow: var(--qf-glow-lime); }
+.qf-glow-violet   { box-shadow: var(--qf-glow-violet); }
+.qf-glow-blue     { box-shadow: var(--qf-glow-blue); }
+
+/* Text Glow */
+.qf-text-glow-cyan {
+  text-shadow: 
+    0 0 10px rgba(0, 245, 212, 0.8),
+    0 0 20px rgba(0, 245, 212, 0.5),
+    0 0 40px rgba(0, 245, 212, 0.3);
+}
+
+.qf-text-glow-violet {
+  text-shadow: 
+    0 0 10px rgba(188, 0, 255, 0.8),
+    0 0 20px rgba(188, 0, 255, 0.5),
+    0 0 40px rgba(188, 0, 255, 0.3);
+}
+
+.qf-text-glow-gold {
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+/* Gradient Text */
+.qf-text-gradient-fractal {
+  background: var(--qf-grad-fractal-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qf-text-gradient-quantum {
+  background: var(--qf-grad-fractal-2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qf-text-gradient-gold {
+  background: var(--qf-grad-fractal-3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Fractal Border System --- */
+.qf-border-fractal {
+  position: relative;
+  border: 1px solid transparent;
+  background: linear-gradient(var(--qf-bg-elevated), var(--qf-bg-elevated)) padding-box,
+              var(--qf-grad-fractal-1) border-box;
+}
+
+.qf-border-fractal--glow {
+  box-shadow: 
+    inset 0 0 20px rgba(0, 245, 212, 0.05),
+    0 0 30px rgba(0, 245, 212, 0.1);
+}
+
+/* Animated fractal border */
+.qf-border-fractal--animated::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--qf-grad-mesh);
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity var(--qf-duration-slow) var(--qf-ease-fractal);
+  z-index: -1;
+  animation: qf-border-rotate 8s linear infinite;
+}
+
+.qf-border-fractal--animated:hover::before {
+  opacity: 0.6;
+}
+
+@keyframes qf-border-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- Fractal Card Component --- */
+.qf-card {
+  position: relative;
+  background: var(--qf-surface);
+  border: 1px solid var(--qf-border-default);
+  border-radius: var(--qf-radius-xl);
+  padding: var(--qf-space-6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: 
+    transform var(--qf-duration-base) var(--qf-ease-fractal),
+    border-color var(--qf-duration-base) var(--qf-ease-quantum),
+    box-shadow var(--qf-duration-base) var(--qf-ease-quantum),
+    background var(--qf-duration-base) var(--qf-ease-quantum);
+}
+
+.qf-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--qf-fractal-cyan);
+  box-shadow: var(--qf-shadow-fractal-cyan);
+  background: var(--qf-surface-hover);
+}
+
+.qf-card--fractal-glow {
+  box-shadow: 
+    inset 0 0 40px rgba(0, 245, 212, 0.03),
+    0 0 0 1px rgba(0, 245, 212, 0.1);
+}
+
+.qf-card--fractal-glow:hover {
+  box-shadow: 
+    inset 0 0 60px rgba(0, 245, 212, 0.08),
+    0 0 0 1px rgba(0, 245, 212, 0.3),
+    0 20px 60px rgba(0, 245, 212, 0.15);
+}
+
+/* --- Fractal Button System --- */
+.qf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--qf-space-2);
+  padding: var(--qf-space-3) var(--qf-space-6);
+  font-family: var(--qf-font-sans);
+  font-size: var(--qf-text-sm);
+  font-weight: var(--qf-weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--qf-radius-lg);
+  cursor: pointer;
+  transition: 
+    transform var(--qf-duration-fast) var(--qf-ease-spring),
+    box-shadow var(--qf-duration-fast) var(--qf-ease-quantum),
+    background var(--qf-duration-fast) var(--qf-ease-quantum),
+    color var(--qf-duration-fast) var(--qf-ease-quantum);
+  position: relative;
+  overflow: hidden;
+}
+
+.qf-btn:focus-visible {
+  outline: 2px solid var(--qf-fractal-cyan);
+  outline-offset: 3px;
+}
+
+.qf-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Primary - Fractal Gradient */
+.qf-btn--primary {
+  background: var(--qf-grad-fractal-1);
+  color: var(--qf-primary-900);
+  box-shadow: var(--qf-shadow-fractal-cyan);
+}
+
+.qf-btn--primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 245, 212, 0.4), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Secondary - Outline */
+.qf-btn--secondary {
+  background: transparent;
+  color: var(--qf-text-primary);
+  border: 1px solid var(--qf-border-default);
+}
+
+.qf-btn--secondary:hover:not(:disabled) {
+  border-color: var(--qf-fractal-cyan);
+  color: var(--qf-fractal-cyan);
+  box-shadow: var(--qf-glow-cyan);
+  background: rgba(0, 245, 212, 0.05);
+}
+
+/* Ghost - Minimal */
+.qf-btn--ghost {
+  background: transparent;
+  color: var(--qf-text-secondary);
+  padding: var(--qf-space-2) var(--qf-space-4);
+}
+
+.qf-btn--ghost:hover:not(:disabled) {
+  color: var(--qf-text-primary);
+  background: var(--qf-surface);
+}
+
+/* Fractal Accent Variants */
+.qf-btn--magenta { background: linear-gradient(135deg, var(--qf-fractal-magenta), var(--qf-fractal-violet)); box-shadow: var(--qf-glow-magenta); }
+.qf-btn--gold    { background: linear-gradient(135deg, var(--qf-fractal-gold), var(--qf-fractal-orange)); box-shadow: var(--qf-glow-gold); color: var(--qf-primary-900); }
+.qf-btn--lime    { background: linear-gradient(135deg, var(--qf-fractal-lime), var(--qf-fractal-cyan)); box-shadow: var(--qf-glow-lime); color: var(--qf-primary-900); }
+.qf-btn--violet  { background: linear-gradient(135deg, var(--qf-fractal-violet), var(--qf-fractal-blue)); box-shadow: var(--qf-glow-violet); }
+.qf-btn--blue    { background: linear-gradient(135deg, var(--qf-fractal-blue), var(--qf-fractal-cyan)); box-shadow: var(--qf-glow-blue); }
+
+/* Button Sizes */
+.qf-btn--sm { padding: var(--qf-space-2) var(--qf-space-4); font-size: var(--qf-text-xs); }
+.qf-btn--lg { padding: var(--qf-space-4) var(--qf-space-8); font-size: var(--qf-text-base); }
+.qf-btn--xl { padding: var(--qf-space-5) var(--qf-space-10); font-size: var(--qf-text-lg); }
+
+/* --- Fractal Input Fields --- */
+.qf-field {
+  width: 100%;
+}
+
+.qf-field__label {
+  display: block;
+  font-size: var(--qf-text-sm);
+  font-weight: var(--qf-weight-medium);
+  color: var(--qf-text-secondary);
+  margin-bottom: var(--qf-space-2);
+  transition: color var(--qf-duration-fast) var(--qf-ease-quantum);
+}
+
+.qf-field__input {
+  width: 100%;
+  padding: var(--qf-space-3) var(--qf-space-4);
+  font-family: var(--qf-font-sans);
+  font-size: var(--qf-text-base);
+  color: var(--qf-text-primary);
+  background: var(--qf-bg-elevated);
+  border: 1px solid var(--qf-border-default);
+  border-radius: var(--qf-radius-lg);
+  transition: 
+    border-color var(--qf-duration-fast) var(--qf-ease-quantum),
+    box-shadow var(--qf-duration-fast) var(--qf-ease-quantum),
+    background var(--qf-duration-fast) var(--qf-ease-quantum);
+}
+
+.qf-field__input::placeholder {
+  color: var(--qf-text-muted);
+}
+
+.qf-field__input:hover {
+  border-color: var(--qf-border-strong);
+}
+
+.qf-field__input:focus {
+  outline: none;
+  border-color: var(--qf-fractal-cyan);
+  box-shadow: var(--qf-glow-cyan), 0 0 0 3px rgba(0, 245, 212, 0.15);
+  background: var(--qf-surface);
+}
+
+.qf-field:focus-within .qf-field__label {
+  color: var(--qf-fractal-cyan);
+}
+
+/* --- Scroll Progress Bar --- */
+.qf-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--qf-grad-fractal-1);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: calc(var(--qf-z-nav) + 1);
+  pointer-events: none;
+}
+
+/* --- Magnetic Cursor Effect --- */
+.qf-magnetic {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* --- Parallax Layers --- */
+.qf-parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.qf-parallax--slow   { --qf-parallax-speed: 0.1; }
+.qf-parallax--medium { --qf-parallax-speed: 0.3; }
+.qf-parallax--fast   { --qf-parallax-speed: 0.5; }
+
+/* --- Fractal Background Patterns --- */
+.qf-bg-fractal-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: var(--qf-z-bg);
+  background: var(--qf-grad-mesh);
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.qf-bg-fractal-noise {
+  position: absolute;
+  inset: 0;
+  z-index: var(--qf-z-bg);
+  opacity: 0.02;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.qf-bg-fractal-radial {
+  position: absolute;
+  inset: 0;
+  z-index: var(--qf-z-bg);
+  pointer-events: none;
+  background: radial-gradient(ellipse at 30% 20%, rgba(0, 245, 212, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(188, 0, 255, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 50%, rgba(255, 215, 0, 0.04) 0%, transparent 60%);
+}

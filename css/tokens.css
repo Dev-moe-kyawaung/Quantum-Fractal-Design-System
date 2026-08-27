@@ -1,0 +1,222 @@
+/* ==========================================================================
+   QUANTUM-FRACTAL DESIGN SYSTEM - CORE TOKENS
+   ========================================================================== */
+
+/* --- Color Palette: Quantum-Fractal Spectrum --- */
+:root {
+  /* Primary Quantum Colors */
+  --qf-primary-900: #050814;
+  --qf-primary-800: #0a1028;
+  --qf-primary-700: #111a3d;
+  --qf-primary-600: #1a2752;
+  --qf-primary-500: #253668;
+  --qf-primary-400: #324880;
+  --qf-primary-300: #4460a0;
+  --qf-primary-200: #5e80c0;
+  --qf-primary-100: #88a8e0;
+  --qf-primary-50:  #bccff0;
+
+  /* Fractal Accent Colors */
+  --qf-fractal-cyan:     #00f5d4;
+  --qf-fractal-magenta:  #ff00aa;
+  --qf-fractal-gold:     #ffd700;
+  --qf-fractal-lime:     #aaff00;
+  --qf-fractal-orange:   #ff6b00;
+  --qf-fractal-violet:   #bc00ff;
+  --qf-fractal-blue:     #0088ff;
+
+  /* Semantic Colors */
+  --qf-bg-deep:       var(--qf-primary-900);
+  --qf-bg-base:       var(--qf-primary-800);
+  --qf-bg-elevated:   var(--qf-primary-700);
+  --qf-bg-overlay:    rgba(10, 16, 40, 0.92);
+  --qf-surface:       rgba(26, 39, 82, 0.6);
+  --qf-surface-hover: rgba(40, 54, 104, 0.8);
+
+  --qf-text-primary:   #ffffff;
+  --qf-text-secondary: rgba(255, 255, 255, 0.72);
+  --qf-text-muted:     rgba(255, 255, 255, 0.48);
+  --qf-text-inverse:   var(--qf-primary-900);
+
+  --qf-border-subtle:  rgba(255, 255, 255, 0.06);
+  --qf-border-default: rgba(255, 255, 255, 0.12);
+  --qf-border-strong:  rgba(255, 255, 255, 0.24);
+
+  /* Fractal Glow System */
+  --qf-glow-cyan:     0 0 20px rgba(0, 245, 212, 0.4), 
+                      0 0 40px rgba(0, 245, 212, 0.2),
+                      0 0 80px rgba(0, 245, 212, 0.1);
+  --qf-glow-magenta:  0 0 20px rgba(255, 0, 170, 0.4), 
+                      0 0 40px rgba(255, 0, 170, 0.2),
+                      0 0 80px rgba(255, 0, 170, 0.1);
+  --qf-glow-gold:     0 0 20px rgba(255, 215, 0, 0.4), 
+                      0 0 40px rgba(255, 215, 0, 0.2),
+                      0 0 80px rgba(255, 215, 0, 0.1);
+  --qf-glow-lime:     0 0 20px rgba(170, 255, 0, 0.4), 
+                      0 0 40px rgba(170, 255, 0, 0.2),
+                      0 0 80px rgba(170, 255, 0, 0.1);
+  --qf-glow-violet:   0 0 20px rgba(188, 0, 255, 0.4), 
+                      0 0 40px rgba(188, 0, 255, 0.2),
+                      0 0 80px rgba(188, 0, 255, 0.1);
+  --qf-glow-blue:     0 0 20px rgba(0, 136, 255, 0.4), 
+                      0 0 40px rgba(0, 136, 255, 0.2),
+                      0 0 80px rgba(0, 136, 255, 0.1);
+
+  /* Fractal Gradient Stops */
+  --qf-grad-fractal-1: linear-gradient(135deg, var(--qf-fractal-cyan) 0%, var(--qf-fractal-violet) 50%, var(--qf-fractal-magenta) 100%);
+  --qf-grad-fractal-2: linear-gradient(225deg, var(--qf-fractal-blue) 0%, var(--qf-fractal-cyan) 50%, var(--qf-fractal-lime) 100%);
+  --qf-grad-fractal-3: radial-gradient(ellipse at center, var(--qf-fractal-gold) 0%, var(--qf-fractal-orange) 50%, var(--qf-fractal-magenta) 100%);
+  --qf-grad-quantum:   linear-gradient(180deg, var(--qf-primary-900) 0%, var(--qf-primary-700) 50%, var(--qf-primary-900) 100%);
+  --qf-grad-mesh:      conic-gradient(from 0deg at 50% 50%, var(--qf-fractal-cyan), var(--qf-fractal-violet), var(--qf-fractal-magenta), var(--qf-fractal-blue), var(--qf-fractal-cyan));
+
+  /* --- Typography Scale: Fractal Harmonics --- */
+  --qf-font-sans: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --qf-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --qf-font-display: 'Syne', 'Space Grotesk', sans-serif;
+
+  /* Type Scale (Major Third ratio 1.25) */
+  --qf-text-xs:      clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --qf-text-sm:      clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);
+  --qf-text-base:    clamp(1rem, 0.95rem + 0.25vw, 1.05rem);
+  --qf-text-lg:      clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+  --qf-text-xl:      clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --qf-text-2xl:     clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  --qf-text-3xl:     clamp(2rem, 1.75rem + 1.25vw, 3rem);
+  --qf-text-4xl:     clamp(2.5rem, 2.1rem + 2vw, 4rem);
+  --qf-text-5xl:     clamp(3.5rem, 2.8rem + 3.5vw, 6rem);
+  --qf-text-6xl:     clamp(5rem, 4rem + 5vw, 9rem);
+
+  /* Line Heights */
+  --qf-leading-tight:   1.1;
+  --qf-leading-snug:    1.375;
+  --qf-leading-normal:  1.6;
+  --qf-leading-relaxed: 1.8;
+
+  /* Font Weights */
+  --qf-weight-light:    300;
+  --qf-weight-normal:   400;
+  --qf-weight-medium:   500;
+  --qf-weight-semibold: 600;
+  --qf-weight-bold:     700;
+  --qf-weight-extrabold: 800;
+
+  /* --- Spacing: Golden Ratio & Fractal Steps --- */
+  --qf-space-0:   0;
+  --qf-space-1:   0.25rem;   /* 4px */
+  --qf-space-2:   0.5rem;    /* 8px */
+  --qf-space-3:   0.75rem;   /* 12px */
+  --qf-space-4:   1rem;      /* 16px */
+  --qf-space-5:   1.25rem;   /* 20px */
+  --qf-space-6:   1.5rem;    /* 24px */
+  --qf-space-8:   2rem;      /* 32px */
+  --qf-space-10:  2.5rem;    /* 40px */
+  --qf-space-12:  3rem;      /* 48px */
+  --qf-space-16:  4rem;      /* 64px */
+  --qf-space-20:  5rem;      /* 80px */
+  --qf-space-24:  6rem;      /* 96px */
+  --qf-space-32:  8rem;      /* 128px */
+
+  /* Fractal Spacing (φ-based) */
+  --qf-space-phi-1:  1.618rem;
+  --qf-space-phi-2:  2.618rem;
+  --qf-space-phi-3:  4.236rem;
+  --qf-space-phi-4:  6.854rem;
+
+  /* --- Responsive Grid System --- */
+  --qf-grid-columns: 12;
+  --qf-grid-gap: var(--qf-space-6);
+  --qf-grid-gap-sm: var(--qf-space-4);
+  --qf-grid-gap-lg: var(--qf-space-8);
+  --qf-container-max: 1440px;
+  --qf-container-padding: var(--qf-space-6);
+  --qf-container-padding-lg: var(--qf-space-10);
+
+  /* Breakpoints */
+  --qf-bp-xs:  320px;
+  --qf-bp-sm:  480px;
+  --qf-bp-md:  768px;
+  --qf-bp-lg:  1024px;
+  --qf-bp-xl:  1280px;
+  --qf-bp-2xl: 1536px;
+
+  /* --- Border Radius --- */
+  --qf-radius-none:  0;
+  --qf-radius-sm:    0.25rem;
+  --qf-radius-md:    0.5rem;
+  --qf-radius-lg:    1rem;
+  --qf-radius-xl:    1.5rem;
+  --qf-radius-2xl:   2rem;
+  --qf-radius-full:  9999px;
+  --qf-radius-organic: 2rem 1rem 2rem 1rem / 1rem 2rem 1rem 2rem;
+
+  /* --- Transitions & Easing --- */
+  --qf-ease-quantum:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --qf-ease-fractal:    cubic-bezier(0.4, 0, 0.2, 1);
+  --qf-ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --qf-ease-expo:       cubic-bezier(0.16, 1, 0.3, 1);
+  --qf-ease-circ:       cubic-bezier(0.87, 0, 0.13, 1);
+
+  --qf-duration-instant: 0ms;
+  --qf-duration-fast:    150ms;
+  --qf-duration-base:    300ms;
+  --qf-duration-slow:    500ms;
+  --qf-duration-slower:  800ms;
+  --qf-duration-ambient: 2000ms;
+
+  /* --- Z-Index Layers --- */
+  --qf-z-bg:       -10;
+  --qf-z-base:     0;
+  --qf-z-content:  10;
+  --qf-z-ui:       100;
+  --qf-z-nav:      200;
+  --qf-z-modal:    300;
+  --qf-z-toast:    400;
+  --qf-z-cursor:   500;
+
+  /* --- Shadow System --- */
+  --qf-shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.3);
+  --qf-shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.35);
+  --qf-shadow-md:  0 8px 24px rgba(0, 0, 0, 0.4);
+  --qf-shadow-lg:  0 16px 48px rgba(0, 0, 0, 0.45);
+  --qf-shadow-xl:  0 32px 96px rgba(0, 0, 0, 0.5);
+  --qf-shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  /* Fractal Shadows */
+  --qf-shadow-fractal-cyan:  0 0 40px rgba(0, 245, 212, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4);
+  --qf-shadow-fractal-violet: 0 0 40px rgba(188, 0, 255, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* --- Particle System Config --- */
+  --qf-particle-count-base: 80;
+  --qf-particle-count-lg: 150;
+  --qf-particle-size-min: 1;
+  --qf-particle-size-max: 4;
+  --qf-particle-speed-min: 0.1;
+  --qf-particle-speed-max: 0.8;
+  --qf-particle-opacity-min: 0.1;
+  --qf-particle-opacity-max: 0.6;
+
+  /* --- Reduced Motion --- */
+  --qf-reduced-motion: 0;
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  :root {
+    --qf-border-subtle:  rgba(255, 255, 255, 0.3);
+    --qf-border-default: rgba(255, 255, 255, 0.5);
+    --qf-text-secondary: rgba(255, 255, 255, 0.9);
+    --qf-text-muted:     rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --qf-reduced-motion: 1;
+    --qf-duration-fast:    0ms;
+    --qf-duration-base:    0ms;
+    --qf-duration-slow:    0ms;
+    --qf-duration-slower:  0ms;
+    --qf-duration-ambient: 0ms;
+  }
+}
